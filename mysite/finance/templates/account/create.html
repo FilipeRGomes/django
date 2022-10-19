@@ -1,0 +1,6 @@
+<p>Here: {{ form.id }}</p>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="create">
+</form>
+<a href="./delete/{{ form.id }}" class="btn btn-primary">create</a>

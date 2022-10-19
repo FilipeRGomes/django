@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for object in object_list %}
+  <div class="m-2">
+    <a href="{% url 'finance:update' object.pk %}">{{object}}</a>
+    <small><a href="{% url 'finance:delete' object.pk %}" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></small>
+  </div>
+{% endfor %}
+<div><a class="btn btn-primary" href="{% url 'finance:create' %}">Create a new Account</a></div>
+{% endblock %}
+
+
+<small class="btn btn-danger"><a href="{% url 'finance:delete' object.pk %}"><i class="fa fa-trash-o"></i></a></small>
