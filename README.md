@@ -14,6 +14,7 @@ django projects
  - pip install -r requirements.txt
 
 # GIT WORKFLOW
+https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow
 git remote set-url origin
 $ git flow init
 
