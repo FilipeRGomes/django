@@ -14,7 +14,7 @@ django projects
  - pip install -r requirements.txt
 
 # GIT WORKFLOW
-
+git remote set-url origin
 $ git flow init
 
 
