@@ -48,7 +48,7 @@ class AccountUpdateView(generic.UpdateView):
     def form_valid(self, form):
         form.save()
         account = Account.objects.get(id=self.account_id)
-        return HttpResponse(render_to_string('account/account_update.html', {'account': account}))    
+        return HttpResponse(render_to_string('account/account_success_update.html', {'account': account}))    
 
 
 class AccountDeleteView(generic.DeleteView):

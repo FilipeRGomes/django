@@ -1,8 +1,8 @@
-<div class="modal-dialog modal-lg">
-    <div class="modal-content">
         <form id="item_update_form" method='post' class="form" role="form" action="{% url 'finance:update' object.pk %}">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <a class="btn btn-primary" href="{% url 'finance:index' %}">X</a>
+
+                
                 <h4 class="modal-title" id="myModalLabel">Account {{ object.pk }}</h4>
               </div>
               <div class="modal-body">
@@ -29,16 +29,24 @@
               </div>
         </form>
         <script>
-            jQuery('.modal-content .calendar').datepicker({ dateFormat: "yy-mm-dd" });
+                $(document).ready(function() {
+                    console.log('fechar modal')
+
+                });
+                
+                $('#modal').on('hidden.bs.modal', function () {
+
+                    console.log('fechar modal 22')
+                    $(this).removeData('bs.modal');
+                });
 
                 var form_options = {
                     target: '#modal',
                     success: function() {  }
                 }
                 $('#item_update_form').ajaxForm(form_options);
+                
         </script>
-    </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
 
 
 

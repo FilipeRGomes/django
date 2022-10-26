@@ -2,14 +2,18 @@
 
 {% block extra_js%}
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="https://malsup.github.io/jquery.form.js"></script> 
 {% endblock %}
 
 {% block content %}
 <h1>Account list</h1>
 <section>
-   <!-- Modal -->
-   <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <!-- Modal -->content
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->    
+
   </div>
   <!-- /.modal -->
   <table class="table table-bordered table-hovered "cellspacing='0'>
@@ -44,6 +48,23 @@
 
 <div><a class="btn btn-primary" href="{% url 'finance:create' %}">Create a new Account</a></div>
 </section>
+
+<script>
+
+//setTimeout(function() { jQuery('#modal').modal('hide'); }, 1000);
+//  $('body').on('hidden.bs.modal', '.modal', function () {
+//      $(this).removeData('bs.modal');
+//  });
+$(document).ready(function() {
+                    console.log('fUNCIONA')
+                
+                  });
+
+                  $('body').on('hidden.bs.modal', '#modal', function () {
+                        $(this).removeData('bs.modal');
+                    });
+
+</script>
 {% endblock %}
 
 
