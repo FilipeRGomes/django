@@ -23,16 +23,14 @@
                         </div>
                     {% endfor %}
               </div>
-              <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="annulla" />
+              <div class="modal-footer"> 
+
+                <a class="btn btn-default" href="{% url 'finance:index' %}">Cancel</a>
+                <!-- <input type="button" id="closebtn" class="btn btn-default" data-dismiss="modal" value="annulla" /> -->
                 <input type="submit" class="btn btn-primary" value="save" style="margin-bottom: 5px;" />
               </div>
         </form>
         <script>
-                $(document).ready(function() {
-                    console.log('fechar modal')
-
-                });
                 
                 $('#modal').on('hidden.bs.modal', function () {
 
@@ -45,7 +43,32 @@
                     success: function() {  }
                 }
                 $('#item_update_form').ajaxForm(form_options);
-                
+                //var btn = document.getElementById("closebtn");
+                //btn.onclick = function() {
+                //    console.log('ta rolando')
+                //    $('#item_update_form').reset();
+                //}
+
+
+        //--
+
+
+        // Get the modal
+        //var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("closebtn");
+
+        // Get the <span> element that closes the modal
+        //var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        // btn.onclick = function() {
+        //     console.log('ta rolando')
+        //     document.getElementById("item_update_form").reset();
+        // }
+
+
         </script>
 
 
