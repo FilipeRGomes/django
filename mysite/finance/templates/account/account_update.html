@@ -1,10 +1,12 @@
         <form id="item_update_form" method='post' class="form" role="form" action="{% url 'finance:update' object.pk %}">
-              <div class="modal-header">
-                <a class="btn btn-primary" href="{% url 'finance:index' %}">X</a>
-
-                
-                <h4 class="modal-title" id="myModalLabel">Account {{ object.pk }}</h4>
-              </div>
+              <div class="modal-header" style="">
+                <div style="position: relative; left: -100px;">
+                    <h4 class="modal-title" id="myModalLabel">Account {{ object.pk }}</h4>
+                </div>
+                <div style="position: relative; left: 100px;">
+                    <a class="btn btn-primary" href="{% url 'finance:index' %}">X</a>
+                </div>    
+            </div>
               <div class="modal-body">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
@@ -24,11 +26,11 @@
                     {% endfor %}
               </div>
               <div class="modal-footer"> 
-
-                <a class="btn btn-default" href="{% url 'finance:index' %}">Cancel</a>
-                <!-- <input type="button" id="closebtn" class="btn btn-default" data-dismiss="modal" value="annulla" /> -->
                 <input type="submit" class="btn btn-primary" value="save" style="margin-bottom: 5px;" />
-              </div>
+                <a class="btn btn-default" href="{% url 'finance:index' %}">Cancel</a>
+                <a href="{% url 'finance:delete' object.pk %}" class="btn btn-danger" style="margin-bottom: 5px;" ><i class="fa fa-trash-o"></i></a>
+                <!-- <input type="button" id="closebtn" class="btn btn-default" data-dismiss="modal" value="annulla" /> -->
+                </div>
         </form>
         <script>
                 
@@ -57,7 +59,7 @@
         //var modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
-        var btn = document.getElementById("closebtn");
+        //var btn = document.getElementById("closebtn");
 
         // Get the <span> element that closes the modal
         //var span = document.getElementsByClassName("close")[0];

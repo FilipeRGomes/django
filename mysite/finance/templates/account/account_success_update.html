@@ -1,16 +1,21 @@
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Pratica {{ loan.id }}</h4>
+                <a class="btn btn-primary" href="{% url 'finance:index' %}">X</a>
+                <h4 class="modal-title" id="myModalLabel">Pratica {{ object.pk }}</h4>
               </div>
               <div class="modal-body">
                   <p>Fuck yeah!</p>
                   <script>
-                    setTimeout(function() { jQuery('#modal').modal('hide'); }, 1000);
-                    $('body').on('hidden.bs.modal', '.modal', function () {
-                        $(this).removeData('bs.modal');
-                    });
+                    //Redirect to list view url
+                    const Url = "{% url 'finance:index' %}"
+                    setTimeout(function() { 
+                      window.location.replace(Url);
+                    }, 1000);
+                    //Doesn't work properli 
+                    //$('body').on('hidden.bs.modal', '.modal', function () {
+                    //    $(this).removeData('bs.modal');
+                    //});
                   </script>
               </div>
               <div class="modal-footer">
