@@ -7,7 +7,7 @@
 {% block content %}
 <h1>Account list</h1>
 <section>
-   <!-- Modal -->content
+   <!-- Modal content-->
   <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -16,6 +16,10 @@
 
   </div>
   <!-- /.modal -->
+
+  <div style="margin: 10px 0px;">
+    <a class="btn btn-primary" data-toggle="modal" href="{% url 'finance:create' %}" data-target="#modal" title="Create item" data-tooltip>Create a new Account</a>
+  </div>
   <table class="table table-bordered table-hovered "cellspacing='0'>
     <tr>
         <th>#</th>
@@ -46,7 +50,6 @@
 {% endfor %}
 -->
 
-<div><a class="btn btn-primary" href="{% url 'finance:create' %}">Create a new Account</a></div>
 </section>
 
 <script>

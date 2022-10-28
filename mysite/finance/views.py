@@ -28,9 +28,16 @@ class AccountDetailView(generic.DetailView):
 class AccountCreateView(generic.CreateView):
     model = Account
     form_class: AccountForm 
-    template_name = 'account/create.html'
-    #fields = ['name', 'account_description', 'balance']
-
+    template_name = 'account/account_create.html'
+    fields = ['name', 'account_description', 'balance']
+    
+    def dispatch(self, *args, **kwargs):
+        #self.account_id = kwargs['pk']
+        return super(AccountCreateView, self).dispatch(*args, **kwargs)
+    
+    def form_valid(self, form):
+        form.save()
+        return HttpResponse(render_to_string('account/account_success_update.html'))    
 
 
 
