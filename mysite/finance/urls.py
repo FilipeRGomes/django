@@ -5,12 +5,12 @@ from . import views
 #https://www.abidibo.net/blog/2015/11/18/modal-django-forms-bootstrap-4/
 app_name = 'finance'
 urlpatterns = [
-    path('account', views.AccountIndexView.as_view(), name='index'),
-    path('account/detail/<int:pk>/', views.AccountDetailView.as_view(), name='detail'),
+    path('account', views.AccountIndexView.as_view(), name='account_index'),
+    path('account/detail/<int:pk>/', views.AccountDetailView.as_view(), name='account_detail'),
     #path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
-    path('account/create/', views.AccountCreateView.as_view(), name='create'),
-    path('account/update/<int:pk>/', views.AccountUpdateView.as_view(), name='update'),
-    path('account/delete/<int:pk>/', views.AccountDeleteView.as_view(), name='delete'),
+    path('account/create/', views.AccountCreateView.as_view(), name='account_create'),
+    path('account/update/<int:pk>/', views.AccountUpdateView.as_view(), name='account_update'),
+    path('account/delete/<int:pk>/', views.AccountDeleteView.as_view(), name='account_delete'),
     
 ]
 

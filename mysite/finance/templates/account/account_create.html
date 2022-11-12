@@ -1,0 +1,55 @@
+<form id="item_update_form" method='post' class="form" role="form" action="{% url 'finance:account_create' %}">
+    {% csrf_token %}
+    <div class="modal-header" style="">
+    Create Account
+    </div>
+    <div class="modal-body">
+        {{ form.as_p }}
+    </div>
+    <div class="modal-footer"> 
+        <input type="submit" class="btn btn-primary" value="Create" style="margin-bottom: 5px;" />
+        <a class="btn btn-default" href="{% url 'finance:account_index' %}">Cancel</a>
+    </div>
+</form>
+        <script>
+                
+                //$('#modal').on('hidden.bs.modal', function () {
+                //    console.log('fechar modal 22')
+                //    $(this).removeData('bs.modal');
+                //});
+
+                var form_options = {
+                    target: '#modal',
+                    success: function() {  }
+                }
+                $('#item_update_form').ajaxForm(form_options);
+                //var btn = document.getElementById("closebtn");
+                //btn.onclick = function() {
+                //    console.log('ta rolando')
+                //    $('#item_update_form').reset();
+                //}
+
+
+        //--
+
+
+        // Get the modal
+        //var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        //var btn = document.getElementById("closebtn");
+
+        // Get the <span> element that closes the modal
+        //var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        // btn.onclick = function() {
+        //     console.log('ta rolando')
+        //     document.getElementById("item_update_form").reset();
+        // }
+
+
+        </script>
+
+
+

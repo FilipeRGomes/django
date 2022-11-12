@@ -1,14 +1,14 @@
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
               <div class="modal-header">
-                <a class="btn btn-primary" href="{% url 'finance:index' %}">X</a>
+                <a class="btn btn-primary" href="{% url 'finance:account_index' %}">X</a>
                 <h4 class="modal-title" id="myModalLabel">Pratica {{ object.pk }}</h4>
               </div>
               <div class="modal-body">
                   <p>Fuck yeah!</p>
                   <script>
                     //Redirect to list view url
-                    const Url = "{% url 'finance:index' %}"
+                    const Url = "{% url 'finance:account_index' %}"
                     setTimeout(function() { 
                       window.location.replace(Url);
                     }, 1000);

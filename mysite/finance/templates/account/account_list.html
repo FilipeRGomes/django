@@ -18,7 +18,7 @@
   <!-- /.modal -->
 
   <div style="margin: 10px 0px;">
-    <a class="btn btn-primary" data-toggle="modal" href="{% url 'finance:create' %}" data-target="#modal" title="Create item" data-tooltip>Create a new Account</a>
+    <a class="btn btn-primary" data-toggle="modal" href="{% url 'finance:account_create' %}" data-target="#modal" title="Create item" data-tooltip>Create a new Account</a>
   </div>
   <table class="table table-bordered table-hovered "cellspacing='0'>
     <tr>
@@ -29,25 +29,27 @@
     {% for object in object_list %}
       <tr>
         <td>
-            <a class="fa fa-pencil" data-toggle="modal" href="{% url 'finance:update' object.pk %}" data-target="#modal" title="edit item" data-tooltip></a> 
+            <a class="fa fa-pencil" href="{% url 'finance:account_update' object.pk %}" data-toggle="modal" data-target="#modal" title="edit item" data-tooltip></a> 
         </td>
         <td>
-          <a  href="{% url 'finance:detail' object.pk %}">{{object}}</a> 
+          <a  href="{% url 'finance:account_detail' object.pk %}">{{object}}</a> 
         </td>
         <td>
-          <small><a href="{% url 'finance:delete' object.pk %}" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></small>
+          <small><a class="btn btn-danger" href="{% url 'finance:account_delete' object.pk %}" data-toggle="modal" data-target="#modal" ><i class="fa fa-trash-o"></i></a></small>
         </td>
       </tr>
     {% endfor %}
   </table>
 
 <!--
+  {% comment "" %}
 {% for object in object_list %}
   <div class="m-2">
     <a href="{% url 'finance:update' object.pk %}">{{object}}</a>
     <small><a href="{% url 'finance:delete' object.pk %}" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></small>
   </div>
 {% endfor %}
+{% endcomment %}
 -->
 
 </section>

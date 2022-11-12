@@ -27,4 +27,8 @@ class TransactionForm(forms.ModelForm):
             "data",
             "transaction_description",
             "value",
+            "status",
+            "transaction_type",
+            "category",
+            "account_1"
         ]
